@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i|Yesteryear&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Public+Sans:400,500,700|Ubuntu+Condensed&display=swap");
 @import url("https://pro.fontawesome.com/releases/v5.12.0/css/all.css");
 * {
   -webkit-box-sizing: border-box;
@@ -13,10 +13,10 @@ html {
 body {
   padding: 0;
   margin: 0;
-  background: #FAF8ED;
+  background: #d3dde6;
   min-height: 100vh;
   color: #2F2B32;
-  font-family: "Space Mono", monospace;
+  font-family: "Public Sans", sans-serif;
 }
 
 a {
@@ -38,7 +38,7 @@ ul {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Space Mono", monospace;
+  font-family: "Ubuntu Condensed", sans-serif;
 }
 
 p {
@@ -97,7 +97,7 @@ header nav ul li a {
 
 header nav ul li a:hover {
   background-color: #d3dde6;
-  color: #2F2B32;
+  color: #1C1D24;
   -webkit-transition: 0.5 ease all;
   transition: 0.5 ease all;
   border-radius: 3px;
@@ -135,9 +135,9 @@ header nav ul li a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   width: 100%;
 }
 
@@ -161,31 +161,58 @@ header nav ul li a:hover {
   border-radius: 5px;
 }
 
-.card .card-image, .card .card-content, .card .card-share {
+.card .card-image,
+.card .card-content,
+.card .card-share {
   margin: 5px;
+  height: 300px;
 }
 
-.card .card-image {
+.card .card-image img {
   max-width: 300px;
-  height: auto;
+  height: 300px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: auto;
+  overflow: hidden;
 }
 
 .card .card-content {
   padding: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 65%;
+}
+
+.card .card-share {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 10%;
 }
 
 .card .card-title {
   padding-bottom: 10px;
   margin: 0;
+  font-size: 2em;
+  color: #DE1B85;
+}
+
+.card .blog-content-preview {
+  line-height: 1.6em;
+  padding: 0;
+  margin: 0;
+  min-height: 120px;
 }
 
 .card .read-more {
   margin-top: 15px;
   padding: 15px;
-  display: block;
+  display: inline-block;
   background: #6766ff;
   color: #d3dde6;
-  width: 200px;
   border-radius: 5px;
 }
 
@@ -193,15 +220,15 @@ header nav ul li a:hover {
   color: #ffffff;
 }
 
-#aboutUs,
-#blog,
-#contactUs {
-  min-height: 100vh;
+.card .card-footer {
+  color: #bebebe;
+  font-weight: 400;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
 }
 
-#aboutUs p,
-#blog p,
-#contactUs p {
+#aboutUs p {
   font-size: 1.25em;
 }
 
@@ -273,34 +300,60 @@ header nav ul li a:hover {
   text-transform: uppercase;
 }
 
-.main-title, .main-title-head {
+.main-title,
+.main-title-head {
   letter-spacing: 1px;
   line-height: 1;
+  text-transform: uppercase;
 }
 
 .main-title {
-  color: #6766ff;
-  font-size: 4em;
-  font-family: "Yesteryear", cursive;
+  color: #1C1D24;
+  font-size: 2.5em;
+  font-family: "Ubuntu Condensed", sans-serif;
 }
 
 .main-title-head {
-  color: #EA2336;
+  color: #6766ff;
   font-size: 5em;
-  font-family: "Space Mono", monospace;
+  font-family: "Ubuntu Condensed", sans-serif;
 }
 
 .sub-title {
   margin: 10px 10px 30px 10px;
-  font-weight: 900;
+  font-weight: 400;
   text-align: center;
-  letter-spacing: 10px;
   font-size: 2em;
-  color: #EA2336;
+  color: #2F2B32;
+  font-family: "Public Sans", sans-serif;
 }
 
 .link {
   word-break: break-word;
+}
+
+.fa-facebook:hover {
+  color: #006AFF;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.fa-whatsapp:hover {
+  color: #25D366;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.fa-twitter:hover {
+  color: #1DA1F2;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.fa-instagram:hover {
+  color: #C13584;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
 }
 
 @media all and (max-width: 786px) {
@@ -310,9 +363,30 @@ header nav ul li a:hover {
   .main-title {
     text-align: center;
   }
+  .sub-title {
+    font-size: 1.5em;
+  }
   .row {
     width: 100%;
     padding: 20px;
+  }
+  .col {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: auto;
+  }
+  #aboutUs p,
+  #blog p,
+  #contactUs p {
+    font-size: 1em;
+  }
+  header nav {
+    margin: 25px auto;
   }
   header nav ul {
     -webkit-box-orient: vertical;
@@ -323,26 +397,27 @@ header nav ul li a:hover {
   header nav ul li {
     padding: 5px;
   }
-  .sub-title {
-    letter-spacing: 5px;
-  }
-  .col {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
   .share-links {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
   }
+  .card .continue-link {
+    text-align: center;
+  }
   .card .read-more {
     margin: 15px auto;
+  }
+  .card .card-image,
+  .card .card-content,
+  .card .card-share {
+    margin: 5px;
+    height: auto;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */

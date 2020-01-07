@@ -1,6 +1,6 @@
 // fonts
-// @import url('https://fonts.googleapis.com/css?family=Muli:400,600,700,800,900|Public+Sans:400,500,700|Special+Elite&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i|Yesteryear&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Muli:400,600,700,800,900|Public+Sans:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Public+Sans:400,500,700|Ubuntu+Condensed&display=swap');
 @import url('https://pro.fontawesome.com/releases/v5.12.0/css/all.css');
 // font-family: 'Muli', sans-serif;
 //font-family: 'Special Elite', cursive;
@@ -9,27 +9,31 @@
 
 
 // variables
-$body-bg: #FAF8ED; //white desert
+$desert-white: #FAF8ED; //white desert
 $body-text-color: #2F2B32;
 $header-bg: #1C1D24; //black stone;
 $primary-color: #6766ff; // dark on hover : #1b1aff
 $secondary-color: #d3dde6;
-$christmas-red: #EA2336;
+$grey: #bebebe;
+$dark-pink: #DE1B85;
 $white: #ffffff;
 
 $primary-link-color: $primary-color;
 $secondary-link-color: $secondary-color;
 
 //fonts
-// $font-title : 'Muli', sans-serif;
+$font-muli : 'Muli',
+sans-serif;
+$font-ubuntu: 'Ubuntu Condensed',
+sans-serif;
 $font-title : 'Space Mono',
 monospace;
 
-// $font-body : 'Public Sans', sans-serif;
 // $font-body : 'Special Elite', cursive;
-$font-body : $font-title;
-$font-cursive: 'Yesteryear',
-cursive;
+// $font-body : $font-title;
+$font-body : 'Public Sans',
+sans-serif;
+
 
 
 * {
@@ -45,7 +49,7 @@ html {
 body {
     padding: 0;
     margin: 0;
-    background: $body-bg;
+     background: $secondary-color;;
     min-height: 100vh;
     color: $body-text-color;
     font-family: $font-body;
@@ -81,7 +85,8 @@ ul {
 
 // for h1 to h6
 #{headings(1,6)} {
-    font-family: $font-title;
+    font-family: $font-ubuntu;
+
 }
 
 
@@ -122,7 +127,7 @@ header {
 
                     &:hover {
                         background-color: $secondary-color;
-                        color: $body-text-color;
+                        color: $header-bg;
                         transition: 0.5 ease all;
                         border-radius: 3px;
                         text-decoration: none;
@@ -160,7 +165,7 @@ header {
 
 .col {
     display: flex;
-    align-items: center;
+     align-items: flex-start;
     width: 100%;
 }
 
@@ -181,54 +186,75 @@ header {
 
     }
 
-    .card-image,     .card-content, .card-share {
+    .card-image,
+    .card-content,
+    .card-share {
         margin: 5px;
-
+height: 300px;
     }
 
     .card-image {
+        img {
         max-width: 300px;
-        height:auto;
+        height: 300px;
+        flex-grow: 1;
+  width: auto;
+  overflow: hidden;
+}
     }
 
     .card-content {
         padding: 10px;
+        flex-grow: 1;
+  width: 65%;
     }
-
-    .card-title {
-padding-bottom: 10px;
-margin: 0;    
+.card-share {
+    flex-grow: 1;
+  width: 10%;
 }
+    .card-title {
+        padding-bottom: 10px;
+        margin: 0;
+        font-size: 2em;
+        color: $dark-pink;
+    }
 
     .blog-content-preview {
-
+        line-height: 1.6em;
+        padding: 0;
+        margin: 0;
+        min-height: 120px;
     }
+
+
     .read-more {
         margin-top: 15px;
-padding: 15px;
-display: block;
-background: $primary-color;
-color: $secondary-color;
-width: 200px;
-border-radius:5px;
-&:hover {
-    color: $white;
-}
+        padding: 15px;
+        display: inline-block;
+        background: $primary-color;
+        color: $secondary-color;
+
+        border-radius: 5px;
+
+        &:hover {
+            color: $white;
+        }
     }
 
     .card-footer {
-
+        color: $grey;
+        font-weight: 400;
+        font-size: 1em;
+        margin: 0;padding: 0;
     }
-    
+
 }
 
 
 
 
-#aboutUs,
-#blog,
-#contactUs {
-    min-height: 100vh;
+#aboutUs {
+    // min-height: 100vh;
 
 
     p {
@@ -252,6 +278,7 @@ border-radius:5px;
     align-items: center;
     width: 100%;
     padding: 10px;
+
     p {
         text-align: center;
     }
@@ -302,31 +329,35 @@ border-radius:5px;
     text-transform: uppercase;
 }
 
-.main-title, .main-title-head {
+.main-title,
+.main-title-head {
 
     letter-spacing: 1px;
     line-height: 1;
+    text-transform: uppercase;
 
 }
+
 .main-title {
-    color: $primary-color;
-    font-size: 4em;
-    font-family: $font-cursive;
+    color: $header-bg;
+    font-size: 2.5em;
+    font-family: $font-ubuntu;
 }
 
 .main-title-head {
-    color: $christmas-red;
+    color: $primary-color;
     font-size: 5em;
-    font-family: $font-body;
+    font-family: $font-ubuntu;
 }
 
 .sub-title {
     margin: 10px 10px 30px 10px;
-    font-weight: 900;
+    font-weight: 400;
     text-align: center;
-    letter-spacing: 10px;
+    // letter-spacing: 3px;
     font-size: 2em;
-    color: $christmas-red;
+    color: $body-text-color;
+    font-family: $font-body;
 }
 
 .link {
@@ -334,21 +365,76 @@ border-radius:5px;
 }
 
 
+.fa-facebook {
+    &:hover {
+        color: #006AFF;
+        transition: 0.5s all;
+
+    }
+}
+.fa-whatsapp {
+    &:hover {
+        color: #25D366;
+        transition: 0.5s all;
+    }
+}
+.fa-twitter {
+    &:hover {
+        color: #1DA1F2;
+        transition: 0.5s all;
+
+    }
+}
+.fa-instagram  {
+    &:hover {
+        color: #C13584;
+        transition: 0.5s all;
+
+    }
+}
+
+
+
+
+//media queries
 
 @media all and (max-width:786px) {
     .main-title-head {
         font-size: 3em;
     }
+
     .main-title {
         text-align: center;
     }
+
+    .sub-title {
+        font-size: 1.5em;
+ 
+    }
+
     .row {
         width: 100%;
         padding: 20px;
     }
+    .col {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+    }
+
+    #aboutUs,
+    #blog,
+    #contactUs {
+
+        p {
+            font-size: 1em;
+        }
+    }
 
     header {
         nav {
+            margin: 25px auto;
+
             ul {
 
                 flex-direction: column;
@@ -360,24 +446,35 @@ border-radius:5px;
         }
     }
 
-    .sub-title {
-        letter-spacing: 5px;
+ 
+
+   
+
+    .share-links {
+        flex-direction: row;
     }
 
-    .col {
-        display: flex;
-        flex-direction: column;
+    .card {
+        .continue-link {
+            text-align: center;
+        }
+        .read-more {
+            margin: 15px auto;
+        }
+
+        .card-image,
+        .card-content,
+        .card-share {
+            margin: 5px;
+    height: auto;
+    flex-grow: 1;
+    width: 100%;
     
+        }
+
+ 
+
+
+         
     }
-
-    
-.share-links  {
-    flex-direction: row;
-}
-
-.card {
-    .read-more {
-        margin: 15px auto;
-}
-}
 }
