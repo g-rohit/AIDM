@@ -313,20 +313,19 @@ header nav ul li a:hover {
   letter-spacing: 1px;
   line-height: 1;
   text-transform: uppercase;
+  font-weight: bolder;
 }
 
 .main-title {
   color: #1C1D24;
   font-size: 2.5em;
   font-family: "Ubuntu Condensed", sans-serif;
-  font-weight: 700;
 }
 
 .main-title-head {
   color: #6766ff;
   font-size: 5em;
   font-family: "Ubuntu Condensed", sans-serif;
-  font-weight: 700;
 }
 
 .sub-title {
