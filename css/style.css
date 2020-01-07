@@ -7,6 +7,7 @@
 
 html, body {
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 html {
