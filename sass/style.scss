@@ -9,34 +9,37 @@
 
 
 // variables
-$body-bg: #FAF8ED ; //white desert
+$body-bg: #FAF8ED; //white desert
 $body-text-color: #2F2B32;
 $header-bg: #1C1D24; //black stone;
-
-$primary-color: #6766ff ; // dark on hover : #1b1aff
-$secondary-color:  #d3dde6 ;
+$primary-color: #6766ff; // dark on hover : #1b1aff
+$secondary-color: #d3dde6;
 $christmas-red: #EA2336;
+$white: #ffffff;
+
 $primary-link-color: $primary-color;
 $secondary-link-color: $secondary-color;
 
 //fonts
 // $font-title : 'Muli', sans-serif;
-$font-title : 'Space Mono', monospace;
+$font-title : 'Space Mono',
+monospace;
 
 // $font-body : 'Public Sans', sans-serif;
 // $font-body : 'Special Elite', cursive;
 $font-body : $font-title;
-$font-cursive: 'Yesteryear', cursive;
+$font-cursive: 'Yesteryear',
+cursive;
 
 
 * {
-   
+
     box-sizing: border-box;
 }
 
 html {
     position: relative;
-scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -44,16 +47,19 @@ body {
     margin: 0;
     background: $body-bg;
     min-height: 100vh;
-color: $body-text-color;
-font-family: $font-body;
+    color: $body-text-color;
+    font-family: $font-body;
 
 }
 
 a {
     color: inherit;
     text-decoration: none;
+    transition: 0.4s all;
+
     &:hover {
         text-decoration: underline;
+        transition: 0.5s all;
     }
 }
 
@@ -64,22 +70,24 @@ ul {
 
 
 @function headings($from:1, $to:6) {
-    @if $from == $to {
+    @if $from==$to {
         @return 'h#{$from}';
-    } @else {
-        @return 'h#{$from},' + headings($from+1, $to);
+    }
+
+    @else {
+        @return 'h#{$from},'+headings($from+1, $to);
     }
 }
 
 // for h1 to h6
 #{headings(1,6)} {
-font-family: $font-title;
-  }
+    font-family: $font-title;
+}
 
 
-  p {
-      line-height: 1.6em;
-  }
+p {
+    line-height: 1.6em;
+}
 
 
 header {
@@ -91,14 +99,15 @@ header {
     align-items: center;
     justify-content: center;
     flex: 1 1 100%;
-    
+
     nav {
         ul {
             display: flex;
             flex-direction: row;
             align-items: center;
             width: 100%;
-            padding: 0;margin: 0;
+            padding: 0;
+            margin: 0;
 
             li {
                 padding: 15px;
@@ -107,26 +116,27 @@ header {
                 a {
                     padding: 15px;
                     margin: 5px;
-                        color: $secondary-link-color;
-                        text-transform: uppercase;
-                        transition: 0.5 ease all;
-                       &:hover {
+                    color: $secondary-link-color;
+                    text-transform: uppercase;
+                    transition: 0.5 ease all;
+
+                    &:hover {
                         background-color: $secondary-color;
                         color: $body-text-color;
                         transition: 0.5 ease all;
                         border-radius: 3px;
                         text-decoration: none;
-                        
-                    }
-                
-            }
-           
-        }
-    }
 
-   
-    
- }
+                    }
+
+                }
+
+            }
+        }
+
+
+
+    }
 
 }
 
@@ -137,92 +147,141 @@ header {
 }
 
 .row {
-
-    width: 70vw;    
-    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 70vw;
     padding: 10px;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .col {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    // margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 .card {
     border-radius: 5px;
-    background: $secondary-color;
+    background: $white;
     width: 100%;
     height: auto;
+    border: 1px solid $secondary-color;
+    box-shadow: 0 1px 6px 0 #20212447;
+    transition: 0.4s all;
 
+    &:hover {
+        border-bottom: 5px solid $christmas-red;
+        transition: 0.2s all;
+        border-radius: 5px;
+
+    }
+
+    .card-image,     .card-content, .card-share {
+        margin: 5px;
+
+    }
+
+    .card-image {
+        max-width: 300px;
+        height:auto;
+    }
+
+    .card-content {
+        padding: 10px;
+
+    }
 }
 
 
-#aboutUs {
-    height: 100vh;
+.card-image {}
 
-   
+#aboutUs,
+#blog,
+#contactUs {
+    min-height: 100vh;
+
+
     p {
         font-size: 1.25em;
     }
 }
 
- 
 
+.social-links {
+    padding-left: 40px;
 
+    li {
+        margin: 10px;
+    }
+}
+
+.share-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
 
 // custom scroll bar:
 /* width */
 ::-webkit-scrollbar {
-    width: 10px; 
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
     background: #f1f1f1;
- 
+
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb { 
+::-webkit-scrollbar-thumb {
     background: #888;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
     background: #555;
-  }
+}
 
 
-  #logo-navbar {
-     
-      width: 50px;
-      height: auto;
-      
-   
+#logo-navbar {
+    &:hover {
+        background: transparent;
     }
 
-
-    .text-center {
-        text-align: center;
+    img {
+        width: 80px;
+        height: auto;
+        border-radius: 50%;
     }
+}
 
 
-    .tt-upper {
-        text-transform: uppercase;
-    }
+.text-center {
+    text-align: center;
+}
+
+
+.tt-upper {
+    text-transform: uppercase;
+}
+
 .main-title {
     color: $primary-color;
     font-size: 4em;
     font-family: $font-cursive;
     letter-spacing: 1px;
     line-height: 1;
-    
+
 }
 
 .sub-title {
-margin: 10px;
+    margin: 10px 10px 30px 10px;
     font-weight: 900;
     text-align: center;
     letter-spacing: 10px;
@@ -230,21 +289,36 @@ margin: 10px;
     color: $christmas-red;
 }
 
+.link {
+    word-break: break-word;
+}
+
 @media all and (max-width:786px) {
-    .row {  width: 95vw;    
-        margin: 10px auto;
-        padding: 10px;
+    .row {
+        width: 100%;
+        padding: 20px;
     }
 
     header {
         nav {
             ul {
-               
+
                 flex-direction: column;
+
                 li {
                     padding: 5px;
                 }
             }
         }
     }
+
+    .sub-title {
+        letter-spacing: 5px;
+    }
+
+    .col {
+        display: flex;
+        flex-direction: column;
+    }
+
 }
