@@ -161,9 +161,11 @@ header {
 .col {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .card {
+    margin: 50px auto;
     border-radius: 5px;
     background: $white;
     width: 100%;
@@ -173,7 +175,7 @@ header {
     transition: 0.4s all;
 
     &:hover {
-        border-bottom: 5px solid $christmas-red;
+        border-bottom: 5px solid $primary-color;
         transition: 0.2s all;
         border-radius: 5px;
 
@@ -191,12 +193,37 @@ header {
 
     .card-content {
         padding: 10px;
+    }
+
+    .card-title {
+padding-bottom: 10px;
+margin: 0;    
+}
+
+    .blog-content-preview {
 
     }
+    .read-more {
+        margin-top: 15px;
+padding: 15px;
+display: block;
+background: $primary-color;
+color: $secondary-color;
+width: 200px;
+border-radius:5px;
+&:hover {
+    color: $white;
+}
+    }
+
+    .card-footer {
+
+    }
+    
 }
 
 
-.card-image {}
+
 
 #aboutUs,
 #blog,
@@ -220,10 +247,14 @@ header {
 
 .share-links {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     padding: 10px;
+    p {
+        text-align: center;
+    }
 }
 
 // custom scroll bar:
@@ -271,13 +302,22 @@ header {
     text-transform: uppercase;
 }
 
+.main-title, .main-title-head {
+
+    letter-spacing: 1px;
+    line-height: 1;
+
+}
 .main-title {
     color: $primary-color;
     font-size: 4em;
     font-family: $font-cursive;
-    letter-spacing: 1px;
-    line-height: 1;
+}
 
+.main-title-head {
+    color: $christmas-red;
+    font-size: 5em;
+    font-family: $font-body;
 }
 
 .sub-title {
@@ -293,7 +333,15 @@ header {
     word-break: break-word;
 }
 
+
+
 @media all and (max-width:786px) {
+    .main-title-head {
+        font-size: 3em;
+    }
+    .main-title {
+        text-align: center;
+    }
     .row {
         width: 100%;
         padding: 20px;
@@ -319,6 +367,17 @@ header {
     .col {
         display: flex;
         flex-direction: column;
+    
     }
 
+    
+.share-links  {
+    flex-direction: row;
+}
+
+.card {
+    .read-more {
+        margin: 15px auto;
+}
+}
 }
