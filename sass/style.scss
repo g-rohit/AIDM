@@ -41,6 +41,10 @@ sans-serif;
     box-sizing: border-box;
 }
 
+html, body {
+    text-rendering: optimizeLegibility;
+}
+
 html {
     position: relative;
     scroll-behavior: smooth;
@@ -54,7 +58,6 @@ body {
     color: $body-text-color;
     font-family: $font-body;
     font-weight: 400;
-    text-rendering:optimizeLegibility; /* fix for safari font issue*/
 
 }
 
