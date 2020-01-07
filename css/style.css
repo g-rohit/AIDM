@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:400,600,700,800,900|Public+Sans:400,500,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  position: relative;
+}
+
+body {
+  background: #FAF8ED;
+  min-height: 100vh;
+  color: #2F2B32;
+  font-family: "Public Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Muli", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 3em;
+  letter-spacing: 1px;
+}
+
+p {
+  line-height: 1.6em;
+}
+
+header {
+  background: #1C1D24;
+  -webkit-box-shadow: 0px 6px 3px #94949494;
+          box-shadow: 0px 6px 3px #94949494;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+}
+
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header a {
+  padding: 15px;
+  margin: 5px;
+  color: #d3dde6;
+  text-transform: uppercase;
+  -webkit-transition: 0.5 ease all;
+  transition: 0.5 ease all;
+}
+
+header a:hover {
+  background-color: #6766ff;
+  -webkit-transition: 0.5 ease all;
+  transition: 0.5 ease all;
+  border-radius: 3px;
+}
+
+.container {
+  width: 95%;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.row {
+  width: 70vw;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+.card {
+  border-radius: 5px;
+  background: #d3dde6;
+  width: 100%;
+  height: auto;
+}
+
+main {
+  margin-top: 80px;
+}
+
+main h1 {
+  padding: 20px;
+  font-weight: 900;
+  text-align: center;
+}
+
+main p {
+  font-size: 1.25em;
+}
+
+#aboutUs {
+  height: 100vh;
+}
+
+@media all and (max-width: 786px) {
+  .row {
+    width: 80vw;
+    margin: 10px auto;
+    padding: 10px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
