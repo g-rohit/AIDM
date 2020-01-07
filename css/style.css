@@ -7,12 +7,12 @@
 
 html, body {
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
 }
 
 html {
   position: relative;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased !important;
 }
 
 body {
