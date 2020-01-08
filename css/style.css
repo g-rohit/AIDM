@@ -1,14 +1,15 @@
-@import url("https://fonts.googleapis.com/css?family=Public+Sans:400,500,700|Ubuntu+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Public+Sans:400,500,700|Ubuntu+Condensed|Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap");
 @import url("https://pro.fontawesome.com/releases/v5.12.0/css/all.css");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   text-rendering: optimizeLegibility;
-  -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-  font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  -webkit-font-feature-settings: "kern" 1, "onum" 1, "liga" 1;
+  font-feature-settings: "kern" 1, "onum" 1, "liga" 1;
 }
 
 html {
@@ -23,15 +24,61 @@ body {
   background: #FAF8ED;
   min-height: 100vh;
   color: #0e0d0f;
-  font-family: "Public Sans", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 400;
+  margin-bottom: 60px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 60px;
+  /* Set the fixed height of the footer here */
+  line-height: 60px;
+  /* Vertically center the text there */
+  background-color: #0e0d0f;
+  color: #FAF8ED;
+}
+
+footer p {
+  padding: 0;
+  margin: 0;
+}
+
+.bg-dark {
+  background: #1C1D24;
+}
+
+.bg-light {
+  background: #FAF8ED;
+}
+
+.text-light {
+  color: #FAF8ED !important;
+}
+
+.text-primary {
+  color: #6766ff !important;
+}
+
+.text-secondary {
+  color: #d3dde6 !important;
+}
+
+.text-medium-dark {
+  color: #828282 !important;
+}
+
+.text-dark {
+  color: #0e0d0f !important;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  -webkit-transition: 0.4s all;
-  transition: 0.4s all;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
 }
 
 a:hover {
@@ -46,12 +93,51 @@ ul {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Ubuntu Condensed", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 700;
 }
 
-p {
-  line-height: 1.6em;
+.btn-primary,
+.btn-secondary {
+  padding: 15px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background: #6766ff;
+  color: #d3dde6;
+}
+
+.btn-primary:hover {
+  color: #ffffff;
+  background: #1b1aff;
+}
+
+.btn-secondary {
+  background: #bebebe;
+  color: #1C1D24;
+}
+
+.btn-secondary:hover {
+  color: #ffffff;
+  background: #1C1D24;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flex-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .flex-center {
@@ -68,7 +154,34 @@ p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100vh;
+}
+
+.jc-sb {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.ai-c {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ai-fe {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.ai-bs {
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.text-center {
+  text-align: center;
 }
 
 header {
@@ -165,15 +278,17 @@ header nav ul li a:hover {
       -ms-flex-align: start;
           align-items: flex-start;
   width: 100%;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .card {
   margin: 50px auto;
-  border-radius: 5px;
+  border-radius: 10px;
   background: #ffffff;
   width: 100%;
   height: auto;
-  border: 1px solid #d3dde6;
   -webkit-box-shadow: 0 1px 6px 0 #20212447;
           box-shadow: 0 1px 6px 0 #20212447;
   -webkit-transition: 0.4s all;
@@ -194,6 +309,10 @@ header nav ul li a:hover {
   height: 300px;
 }
 
+.card .card-image {
+  text-align: center;
+}
+
 .card .card-image img {
   max-width: 300px;
   height: 300px;
@@ -202,6 +321,7 @@ header nav ul li a:hover {
           flex-grow: 1;
   width: auto;
   overflow: hidden;
+  text-align: center;
 }
 
 .card .card-content {
@@ -225,26 +345,26 @@ header nav ul li a:hover {
   font-size: 2em;
   color: #DE1B85;
   font-weight: bold;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .card .blog-content-preview {
-  line-height: 1.6em;
+  line-height: 2em;
   padding: 0;
   margin: 0;
   min-height: 120px;
 }
 
-.card .read-more {
-  margin-top: 15px;
-  padding: 15px;
-  display: inline-block;
-  background: #6766ff;
-  color: #d3dde6;
-  border-radius: 5px;
+.card .continue-link {
+  margin: 0;
 }
 
-.card .read-more:hover {
-  color: #ffffff;
+.card .read-more {
+  margin-top: 15px;
+}
+
+.card .author-name {
+  font-weight: 400;
 }
 
 .card .card-footer {
@@ -253,10 +373,45 @@ header nav ul li a:hover {
   font-size: 1em;
   margin: 0;
   padding: 0;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.card .card-footer:hover {
+  color: #0e0d0f;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
 }
 
 #aboutUs p {
   font-size: 1.25em;
+  line-height: 2em;
+}
+
+#contactUs {
+  padding: 20px;
+  margin: 25px auto auto auto;
+}
+
+#contactUs p {
+  font-size: 1.25em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#contactUs p i {
+  margin-right: 10px;
 }
 
 #contact-container {
@@ -270,6 +425,19 @@ header nav ul li a:hover {
 
 .social-links li {
   margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.social-links li i {
+  margin-right: 10px;
 }
 
 .share-links {
@@ -328,6 +496,10 @@ header nav ul li a:hover {
   text-align: center;
 }
 
+.lead {
+  font-size: 2em;
+}
+
 .tt-upper {
   text-transform: uppercase;
 }
@@ -343,13 +515,13 @@ header nav ul li a:hover {
 .main-title {
   color: #1C1D24;
   font-size: 2.5em;
-  font-family: "Ubuntu Condensed", sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .main-title-head {
   color: #6766ff;
   font-size: 5em;
-  font-family: "Ubuntu Condensed", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   text-align: center;
 }
 
@@ -359,7 +531,7 @@ header nav ul li a:hover {
   text-align: center;
   font-size: 2em;
   color: #0e0d0f;
-  font-family: "Public Sans", sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .link {
@@ -391,6 +563,12 @@ header nav ul li a:hover {
 }
 
 @media all and (max-width: 786px) {
+  .flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .main-title-head {
     font-size: 3em;
   }
@@ -413,6 +591,14 @@ header nav ul li a:hover {
         -ms-flex-direction: column;
             flex-direction: column;
     width: auto;
+  }
+  .lead {
+    font-size: 1.5em;
+  }
+  #aboutUs,
+  #blog,
+  #contactUs {
+    margin-bottom: 100px;
   }
   #aboutUs p,
   #blog p,
@@ -446,12 +632,22 @@ header nav ul li a:hover {
   .card .card-image,
   .card .card-content,
   .card .card-share {
-    margin: 5px;
+    margin: 5px auto;
     height: auto;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
     width: 100%;
+  }
+  .card .published-date,
+  .card .author-name {
+    display: block;
+  }
+  .card .card-footer {
+    text-align: center;
+  }
+  .footer {
+    min-height: 120px;
   }
 }
 /*# sourceMappingURL=style.css.map */

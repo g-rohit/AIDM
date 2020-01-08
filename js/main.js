@@ -61,7 +61,7 @@ var monthlist = [
   }
   
   function format4() {
-    var finalDate = dayOftheWeek.substr(0, 3)+',' +" "+month.substr(0, 3) + " " + date +" " + year;
+    var finalDate = dayOftheWeek.substr(0, 3)+',' +" "+month.substr(0, 3) + " " + date +" " + year + ', '+  ' ' +time;;
     document.querySelector("#format4").innerHTML = finalDate;
   }
   
@@ -75,5 +75,5 @@ var monthlist = [
     document.querySelector("#format6").innerHTML = finalDate;
   }
 
-//   format1(), format2(), format3(),   format4(),, format6()
-  format5()
+ 
+  format4()

@@ -1,6 +1,6 @@
 // fonts
 // @import url('https://fonts.googleapis.com/css?family=Muli:400,600,700,800,900|Public+Sans:400,500,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Public+Sans:400,500,700|Ubuntu+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Public+Sans:400,500,700|Ubuntu+Condensed|Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap');
 @import url('https://pro.fontawesome.com/releases/v5.12.0/css/all.css');
 // font-family: 'Muli', sans-serif;
 //font-family: 'Special Elite', cursive;
@@ -12,7 +12,8 @@
 $desert-white: #FAF8ED; //white desert
 $body-text-color: #0e0d0f;
 $header-bg: #1C1D24; //black stone;
-$primary-color: #6766ff; // dark on hover : #1b1aff
+$primary-color: #6766ff;
+$primary-hover: #1b1aff; // dark on hover : #1b1aff
 $secondary-color: #d3dde6;
 $grey: #bebebe;
 $dark-pink: #DE1B85;
@@ -24,15 +25,17 @@ $secondary-link-color: $secondary-color;
 //fonts
 $font-muli : 'Muli',
 sans-serif;
-$font-ubuntu: 'Ubuntu Condensed',
+$font-ubuntu-c: 'Ubuntu Condensed',
+sans-serif;
+$font-ubuntu: 'Ubuntu',
 sans-serif;
 $font-title : 'Space Mono',
 monospace;
 
 // $font-body : 'Special Elite', cursive;
 // $font-body : $font-title;
-$font-body : 'Public Sans',
-sans-serif;
+// $font-body : 'Public Sans',sans-serif;
+$font-body : $font-ubuntu;
 
 
 
@@ -42,33 +45,80 @@ sans-serif;
 }
 
 // fix for safari font issue
-html, body {
+html,
+body {
     text-rendering: optimizeLegibility;
-    -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-    font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+    -webkit-font-feature-settings: 'kern'1, 'onum'1, 'liga'1;
+    font-feature-settings: 'kern'1, 'onum'1, 'liga'1;
 }
 
 html {
     position: relative;
     scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased !important; 
+    -webkit-font-smoothing: antialiased !important;
 }
 
 body {
     padding: 0;
     margin: 0;
-     background: $desert-white;
+    background: $desert-white;
     min-height: 100vh;
     color: $body-text-color;
     font-family: $font-body;
     font-weight: 400;
+    margin-bottom: 60px;
+}
 
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: 60px; /* Set the fixed height of the footer here */
+    line-height: 60px; /* Vertically center the text there */
+// height: auto;
+    background-color: $body-text-color;
+    color: $desert-white;
+
+    p {
+        padding: 0;
+        margin: 0;
+    }
+  }
+
+.bg-dark {
+    background: $header-bg;
+ 
+}
+
+.bg-light {
+    background: $desert-white;
+ 
+}
+
+.text-light {
+    color: $desert-white !important;
+}
+
+.text-primary {
+    color: $primary-color !important;
+}
+
+.text-secondary {
+    color: $secondary-color !important;
+}
+.text-medium-dark{
+    color: #828282 !important;
+    
+}
+
+.text-dark {
+    color: $body-text-color !important;
 }
 
 a {
     color: inherit;
     text-decoration: none;
-    transition: 0.4s all;
+    transition: 0.5s all;
 
     &:hover {
         text-decoration: underline;
@@ -101,19 +151,82 @@ ul {
 }
 
 
-p {
-    line-height: 1.6em;
+
+
+
+// buttons
+.btn-primary,
+.btn-secondary {
+    padding: 15px;
+    display: inline-block;
+    border-radius: 5px;
 }
 
-.flex-center{
+.btn-primary {
+    background: $primary-color;
+    color: $secondary-color;
+    &:hover {
+        color: $white;
+        background: $primary-hover;
+    }
+}
+
+.btn-secondary {
+    background: $grey;
+    color: $header-bg;
+    
+    &:hover {
+        color: $white;
+        background: $header-bg;
+ 
+    }
+}
+
+
+// flex 
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-item {
+    flex: 1 1 auto;
+}
+
+.flex-center {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}
+
+.ai-c {
+    align-items: center;
+}
+
+.ai-fe {
+    align-items: flex-end;
+}
+
+.ai-bs {
+    align-items: baseline;
+}
+
+.text-center {
+    text-align: center;
 }
 
 header {
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // width: 100%;
     background: $header-bg;
     box-shadow: 0px 6px 3px #94949494;
     min-height: 120px;
@@ -183,17 +296,18 @@ header {
 
 .col {
     display: flex;
-     align-items: flex-start;
+    align-items: flex-start;
     width: 100%;
+    align-items: stretch;
 }
 
 .card {
     margin: 50px auto;
-    border-radius: 5px;
+    border-radius: 10px;
     background: $white;
     width: 100%;
     height: auto;
-    border: 1px solid $secondary-color;
+    // border: 1px solid $secondary-color;
     box-shadow: 0 1px 6px 0 #20212447;
     transition: 0.4s all;
 
@@ -208,63 +322,75 @@ header {
     .card-content,
     .card-share {
         margin: 5px;
-height: 300px;
+        height: 300px;
     }
 
     .card-image {
+        text-align: center;
+
         img {
-        max-width: 300px;
-        height: 300px;
-        flex-grow: 1;
-  width: auto;
-  overflow: hidden;
-}
+            max-width: 300px;
+            height: 300px;
+            flex-grow: 1;
+            width: auto;
+            overflow: hidden;
+            text-align: center;
+        }
     }
 
     .card-content {
         padding: 10px;
         flex-grow: 1;
-  width: 65%;
+        width: 65%;
     }
-.card-share {
-    flex-grow: 1;
-  width: 10%;
-}
+
+    .card-share {
+        flex-grow: 1;
+        width: 10%;
+    }
+
     .card-title {
         padding-bottom: 10px;
         margin: 0;
         font-size: 2em;
         color: $dark-pink;
         font-weight: bold;
+        font-family: $font-ubuntu;
     }
 
     .blog-content-preview {
-        line-height: 1.6em;
+        line-height: 2em;
         padding: 0;
         margin: 0;
         min-height: 120px;
     }
 
+    .continue-link {
+
+        margin: 0;
+    }
 
     .read-more {
         margin-top: 15px;
-        padding: 15px;
-        display: inline-block;
-        background: $primary-color;
-        color: $secondary-color;
+    }
 
-        border-radius: 5px;
+    .author-name {
+        font-weight: 400;
 
-        &:hover {
-            color: $white;
-        }
     }
 
     .card-footer {
         color: $grey;
         font-weight: 400;
         font-size: 1em;
-        margin: 0;padding: 0;
+        margin: 0;
+        padding: 0;
+        transition: 0.2s all;
+
+        &:hover {
+            color: $body-text-color;
+            transition: 0.2s all;
+        }
     }
 
 }
@@ -273,15 +399,32 @@ height: 300px;
 
 
 #aboutUs {
-    // min-height: 100vh;
+    // min-height: 70vh;
 
 
     p {
         font-size: 1.25em;
+        line-height: 2em;
     }
 }
 
-#contact-container{background-color: #1C1D24;
+#contactUs{
+    padding: 20px;
+    margin: 25px auto auto auto; 
+ p {
+    font-size: 1.25em;
+    display: flex;
+    flex-direction: column;
+        align-items: flex-start;
+        flex: 1;
+        i {
+            margin-right: 10px;
+        }
+ }
+}
+
+#contact-container {
+    background-color: #1C1D24;
     background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23585858' fill-opacity='0.35' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
@@ -290,6 +433,12 @@ height: 300px;
 
     li {
         margin: 10px;
+        display: flex;
+        align-items: center;
+        flex: 1;
+        i {
+            margin-right: 10px;
+        }
     }
 }
 
@@ -345,7 +494,9 @@ height: 300px;
 .text-center {
     text-align: center;
 }
-
+.lead {
+    font-size: 2em;
+}
 
 .tt-upper {
     text-transform: uppercase;
@@ -372,7 +523,7 @@ height: 300px;
     font-size: 5em;
     font-family: $font-ubuntu;
     text-align: center;
- 
+
 
 }
 
@@ -398,12 +549,14 @@ height: 300px;
 
     }
 }
+
 .fa-whatsapp {
     &:hover {
         color: #25D366;
         transition: 0.5s all;
     }
 }
+
 .fa-twitter {
     &:hover {
         color: #1DA1F2;
@@ -411,7 +564,8 @@ height: 300px;
 
     }
 }
-.fa-instagram  {
+
+.fa-instagram {
     &:hover {
         color: #C13584;
         transition: 0.5s all;
@@ -419,12 +573,18 @@ height: 300px;
     }
 }
 
+ 
 
 
 
 //media queries
 
 @media all and (max-width:786px) {
+
+    .flex {
+        flex-direction: column;
+    }
+
     .main-title-head {
         font-size: 3em;
     }
@@ -435,23 +595,29 @@ height: 300px;
 
     .sub-title {
         font-size: 1.5em;
- 
+
     }
 
     .row {
         width: 100%;
         padding: 20px;
     }
+
     .col {
         display: flex;
         flex-direction: column;
         width: auto;
     }
 
+    .lead {
+        font-size: 1.5em;
+    }
+
     #aboutUs,
     #blog,
     #contactUs {
 
+        margin-bottom: 100px;
         p {
             font-size: 1em;
         }
@@ -472,9 +638,9 @@ height: 300px;
         }
     }
 
- 
 
-   
+
+
 
     .share-links {
         flex-direction: row;
@@ -483,7 +649,9 @@ height: 300px;
     .card {
         .continue-link {
             text-align: center;
+
         }
+
         .read-more {
             margin: 15px auto;
         }
@@ -491,16 +659,25 @@ height: 300px;
         .card-image,
         .card-content,
         .card-share {
-            margin: 5px;
-    height: auto;
-    flex-grow: 1;
-    width: 100%;
-    
+            margin: 5px auto;
+            height: auto;
+            flex-grow: 1;
+            width: 100%;
+
         }
 
- 
+        .published-date,
+        .author-name {
+            display: block;
+        }
 
+        .card-footer {
+            text-align: center;
+        }
 
-         
+    }
+
+    .footer {
+        min-height: 120px;
     }
 }
