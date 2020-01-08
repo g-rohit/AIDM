@@ -104,6 +104,13 @@ p {
     line-height: 1.6em;
 }
 
+.flex-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 
 header {
     background: $header-bg;
@@ -360,6 +367,7 @@ height: 300px;
     color: $primary-color;
     font-size: 5em;
     font-family: $font-ubuntu;
+    text-align: center;
  
 
 }
