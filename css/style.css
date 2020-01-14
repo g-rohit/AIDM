@@ -21,9 +21,9 @@ html {
 body {
   padding: 0;
   margin: 0;
-  background: #FAF8ED;
+  background: #ffffff;
   min-height: 100vh;
-  color: #0e0d0f;
+  color: #000000;
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
   margin-bottom: 60px;
@@ -37,7 +37,7 @@ footer {
   /* Set the fixed height of the footer here */
   line-height: 60px;
   /* Vertically center the text there */
-  background-color: #0e0d0f;
+  background-color: #000000;
   color: #FAF8ED;
 }
 
@@ -59,7 +59,7 @@ footer p {
 }
 
 .text-primary {
-  color: #6766ff !important;
+  color: #7f00ff !important;
 }
 
 .text-secondary {
@@ -71,7 +71,7 @@ footer p {
 }
 
 .text-dark {
-  color: #0e0d0f !important;
+  color: #000000 !important;
 }
 
 a {
@@ -97,15 +97,15 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-.btn-primary,
-.btn-secondary {
+.btn-primary, .btn-primary-outline,
+.btn-secondary, .btn-secondary-outline {
   padding: 15px;
   display: inline-block;
   border-radius: 5px;
 }
 
 .btn-primary {
-  background: #6766ff;
+  background: #7f00ff;
   color: #d3dde6;
 }
 
@@ -114,14 +114,73 @@ h1, h2, h3, h4, h5, h6 {
   background: #1b1aff;
 }
 
+.btn-primary-outline {
+  background-color: transparent;
+  border: 3px solid #7f00ff;
+  color: #7f00ff;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.btn-primary-outline:hover {
+  color: #ffffff;
+  background: #1b1aff;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  border: 3px solid transparent;
+}
+
 .btn-secondary {
-  background: #bebebe;
-  color: #1C1D24;
+  background: #d3dde6;
+  color: #000000;
 }
 
 .btn-secondary:hover {
   color: #ffffff;
   background: #1C1D24;
+}
+
+.secondary-primary-outline {
+  background-color: transparent;
+  border: 3px solid #d3dde6;
+  color: #1C1D24;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.secondary-primary-outline:hover {
+  color: #ffffff;
+  background: #1b1aff;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  border: 3px solid transparent;
+}
+
+.imagebg {
+  min-height: 120px;
+  background-image: url("");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.h100vh {
+  min-height: 100vh;
 }
 
 .flex {
@@ -185,9 +244,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-  background: #1C1D24;
-  -webkit-box-shadow: 0px 6px 3px #94949494;
-          box-shadow: 0px 6px 3px #94949494;
+  background: -webkit-gradient(linear, left top, right top, from(#8e2de2), to(#4a00e0));
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  -webkit-box-shadow: 2px 6px 50px 5px #5f00ffa8;
+          box-shadow: 2px 6px 50px 5px #5f00ffa8;
   min-height: 120px;
   height: auto;
   display: -webkit-box;
@@ -230,15 +290,15 @@ header nav ul li a {
   margin: 5px;
   color: #d3dde6;
   text-transform: uppercase;
-  -webkit-transition: 0.5 ease all;
-  transition: 0.5 ease all;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
 }
 
 header nav ul li a:hover {
-  background-color: #d3dde6;
+  background-color: #ffffff;
   color: #1C1D24;
-  -webkit-transition: 0.5 ease all;
-  transition: 0.5 ease all;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
   border-radius: 3px;
   text-decoration: none;
 }
@@ -289,14 +349,14 @@ header nav ul li a:hover {
   background: #ffffff;
   width: 100%;
   height: auto;
-  -webkit-box-shadow: 0 1px 6px 0 #20212447;
-          box-shadow: 0 1px 6px 0 #20212447;
+  -webkit-box-shadow: 0 15px 35px #32325d1a, 0 5px 15px #00000012;
+          box-shadow: 0 15px 35px #32325d1a, 0 5px 15px #00000012;
   -webkit-transition: 0.4s all;
   transition: 0.4s all;
 }
 
 .card:hover {
-  border-bottom: 5px solid #6766ff;
+  border-bottom: 5px solid #7f00ff;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
   border-radius: 5px;
@@ -322,6 +382,7 @@ header nav ul li a:hover {
   width: auto;
   overflow: hidden;
   text-align: center;
+  border-radius: 5px;
 }
 
 .card .card-content {
@@ -378,7 +439,7 @@ header nav ul li a:hover {
 }
 
 .card .card-footer:hover {
-  color: #0e0d0f;
+  color: #000000;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
@@ -438,6 +499,13 @@ header nav ul li a:hover {
 
 .social-links li i {
   margin-right: 10px;
+}
+
+.social-links li a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 1em;
+  border-bottom: 1px solid #ffffff;
 }
 
 .share-links {
@@ -505,7 +573,8 @@ header nav ul li a:hover {
 }
 
 .main-title,
-.main-title-head {
+.main-title-head,
+.main-title-footer {
   letter-spacing: 1px;
   line-height: 1;
   text-transform: uppercase;
@@ -513,16 +582,51 @@ header nav ul li a:hover {
 }
 
 .main-title {
-  color: #1C1D24;
+  background: linear-gradient(45deg, #396afc, #2948ff);
+  background: #1b1aff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   font-size: 2.5em;
   font-family: "Ubuntu", sans-serif;
+  background-size: 150%;
+  position: relative;
+}
+
+.main-title::after {
+  margin-top: 10px;
+  content: '';
+  display: block;
+  width: 80px;
+  height: 5px;
+  background: #d3dde6;
+  position: absolute;
 }
 
 .main-title-head {
-  color: #6766ff;
   font-size: 5em;
   font-family: "Ubuntu", sans-serif;
   text-align: center;
+  background: -webkit-gradient(linear, left top, right top, from(#7f00ff), to(#e100ff));
+  background: linear-gradient(to right, #7f00ff, #e100ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 150%;
+}
+
+.main-title-footer::after {
+  margin-top: 20px;
+  content: '';
+  display: block;
+  width: 80px;
+  height: 5px;
+  background: #d3dde6;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .sub-title {
@@ -530,7 +634,7 @@ header nav ul li a:hover {
   font-weight: 400;
   text-align: center;
   font-size: 2em;
-  color: #0e0d0f;
+  color: #000000;
   font-family: "Ubuntu", sans-serif;
 }
 

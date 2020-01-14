@@ -9,15 +9,15 @@
 
 
 // variables
-$desert-white: #FAF8ED; //white desert
-$body-text-color: #0e0d0f;
-$header-bg: #1C1D24; //black stone;
-$primary-color: #6766ff;
+$color-desert-white: #FAF8ED; //white desert
+$color-black: #000000;
+$color-black-stone: #1C1D24; //black stone;
+$primary-color: #7f00ff;
 $primary-hover: #1b1aff; // dark on hover : #1b1aff
 $secondary-color: #d3dde6;
 $grey: #bebebe;
-$dark-pink: #DE1B85;
-$white: #ffffff;
+$color-dark-pink: #DE1B85;
+$color-white: #ffffff;
 
 $primary-link-color: $primary-color;
 $secondary-link-color: $secondary-color;
@@ -61,9 +61,9 @@ html {
 body {
     padding: 0;
     margin: 0;
-    background: $desert-white;
+    background: $color-white;
     min-height: 100vh;
-    color: $body-text-color;
+    color: $color-black;
     font-family: $font-body;
     font-weight: 400;
     margin-bottom: 60px;
@@ -76,8 +76,8 @@ footer {
     min-height: 60px; /* Set the fixed height of the footer here */
     line-height: 60px; /* Vertically center the text there */
 // height: auto;
-    background-color: $body-text-color;
-    color: $desert-white;
+    background-color: $color-black;
+    color: $color-desert-white;
 
     p {
         padding: 0;
@@ -86,17 +86,17 @@ footer {
   }
 
 .bg-dark {
-    background: $header-bg;
+    background: $color-black-stone;
  
 }
 
 .bg-light {
-    background: $desert-white;
+    background: $color-desert-white;
  
 }
 
 .text-light {
-    color: $desert-white !important;
+    color: $color-desert-white !important;
 }
 
 .text-primary {
@@ -112,7 +112,7 @@ footer {
 }
 
 .text-dark {
-    color: $body-text-color !important;
+    color: $color-black !important;
 }
 
 a {
@@ -155,8 +155,8 @@ ul {
 
 
 // buttons
-.btn-primary,
-.btn-secondary {
+.btn-primary,.btn-primary-outline,
+.btn-secondary, .btn-secondary-outline {
     padding: 15px;
     display: inline-block;
     border-radius: 5px;
@@ -166,25 +166,78 @@ ul {
     background: $primary-color;
     color: $secondary-color;
     &:hover {
-        color: $white;
+        color: $color-white;
         background: $primary-hover;
     }
 }
 
+.btn-primary-outline {
+    background-color: transparent;
+    border: 3px solid $primary-color;
+    color: $primary-color;
+    transition: all 0.5s;
+
+    &:hover {
+        color: $color-white;
+        background: $primary-hover;
+        
+        text-decoration: none;
+        transition: all 0.5s;
+    border: 3px solid transparent;
+
+
+    }
+}
+
 .btn-secondary {
-    background: $grey;
-    color: $header-bg;
+    background: $secondary-color;
+    color: $color-black;
     
     &:hover {
-        color: $white;
-        background: $header-bg;
+        color: $color-white;
+        background: $color-black-stone;
  
     }
 }
 
+.secondary-primary-outline {
+    background-color: transparent;
+    border: 3px solid $secondary-color;
+    color: $color-black-stone;
+    transition: all 0.5s;
+
+    &:hover {
+        color: $color-white;
+        background: $primary-hover;
+        
+        text-decoration: none;
+        transition: all 0.5s;
+    border: 3px solid transparent;
+
+
+    }
+}
+
+
+// background image parallex
+.imagebg{
+min-height: 120px;
+    background-image: url('');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;}
 
 // flex 
 
+.center {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 100%;
+}
+.h100vh {
+min-height: 100vh;
+}
 .flex {
     display: flex;
     flex-direction: row;
@@ -227,8 +280,9 @@ header {
     // left: 0;
     // right: 0;
     // width: 100%;
-    background: $header-bg;
-    box-shadow: 0px 6px 3px #94949494;
+
+    background: linear-gradient(to right, rgb(142, 45, 226), rgb(74, 0, 224));
+    box-shadow:2px 6px 50px 5px #5f00ffa8;
     min-height: 120px;
     height: auto;
     display: flex;
@@ -254,12 +308,12 @@ header {
                     margin: 5px;
                     color: $secondary-link-color;
                     text-transform: uppercase;
-                    transition: 0.5 ease all;
+                    transition: 0.5s all;
 
                     &:hover {
-                        background-color: $secondary-color;
-                        color: $header-bg;
-                        transition: 0.5 ease all;
+                        background-color: $color-white;
+                        color: $color-black-stone;
+                        transition: 0.5s all;
                         border-radius: 3px;
                         text-decoration: none;
 
@@ -304,11 +358,10 @@ header {
 .card {
     margin: 50px auto;
     border-radius: 10px;
-    background: $white;
+    background: $color-white;
     width: 100%;
     height: auto;
-    // border: 1px solid $secondary-color;
-    box-shadow: 0 1px 6px 0 #20212447;
+    box-shadow: 0 15px 35px #32325d1a, 0 5px 15px #00000012; 
     transition: 0.4s all;
 
     &:hover {
@@ -327,6 +380,7 @@ header {
 
     .card-image {
         text-align: center;
+        
 
         img {
             max-width: 300px;
@@ -335,6 +389,7 @@ header {
             width: auto;
             overflow: hidden;
             text-align: center;
+            border-radius: 5px;
         }
     }
 
@@ -353,7 +408,7 @@ header {
         padding-bottom: 10px;
         margin: 0;
         font-size: 2em;
-        color: $dark-pink;
+        color: $color-dark-pink;
         font-weight: bold;
         font-family: $font-ubuntu;
     }
@@ -388,7 +443,7 @@ header {
         transition: 0.2s all;
 
         &:hover {
-            color: $body-text-color;
+            color: $color-black;
             transition: 0.2s all;
         }
     }
@@ -438,6 +493,13 @@ header {
         flex: 1;
         i {
             margin-right: 10px;
+        }
+
+        a:hover {
+            color: $color-white;
+            text-decoration: none;
+            line-height: 1em;
+            border-bottom: 1px solid $color-white;
         }
     }
 }
@@ -503,7 +565,8 @@ header {
 }
 
 .main-title,
-.main-title-head {
+.main-title-head, 
+.main-title-footer {
 
     letter-spacing: 1px;
     line-height: 1;
@@ -513,18 +576,53 @@ header {
 }
 
 .main-title {
-    color: $header-bg;
+    background: linear-gradient(45deg, #396afc, #2948ff);
+    background: $primary-hover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
     font-size: 2.5em;
     font-family: $font-ubuntu;
+    background-size: 150%;
+    position: relative;
+
+    &::after {
+        margin-top: 10px;
+        content: '';
+        display: block;
+        width: 80px;
+        height: 5px;
+        background:$secondary-color;
+        position: absolute;
+        // left: 37%;
+    }
 }
 
 .main-title-head {
-    color: $primary-color;
     font-size: 5em;
     font-family: $font-ubuntu;
     text-align: center;
+    background: linear-gradient(to right, rgb(127, 0, 255), rgb(225, 0, 255));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+background-size: 150%;
 
+}
 
+.main-title-footer{
+    &::after {
+        margin-top: 20px;
+        content: '';
+        display: block;
+        width: 80px;
+        height: 5px;
+        background: #d3dde6;
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .sub-title {
@@ -533,7 +631,7 @@ header {
     text-align: center;
     // letter-spacing: 3px;
     font-size: 2em;
-    color: $body-text-color;
+    color: $color-black;
     font-family: $font-body;
 }
 
