@@ -666,6 +666,14 @@ header nav ul li a:hover {
   transition: 0.5s all;
 }
 
+.p-0 {
+  padding: 0;
+}
+
+.m-0 {
+  margin: 0;
+}
+
 @media all and (max-width: 786px) {
   .flex {
     -webkit-box-orient: vertical;
