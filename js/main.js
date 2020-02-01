@@ -76,4 +76,10 @@ var monthlist = [
   }
 
  
-  format4()
+  // format4()
+
+
+  document.querySelector('#currentYear').innerHTML = year;
+
+
+ 
