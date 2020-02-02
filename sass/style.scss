@@ -768,7 +768,7 @@ div#emailSubscribe {
     background: linear-gradient(75deg, #fff000, #fff700);
 
     input {
- 
+        
         padding: 0;
         height: 50px;
         border: 1px solid $primary-color;
@@ -781,6 +781,9 @@ div#emailSubscribe {
         position: relative;
     }
 
+    input, button {
+        -webkit-appearance: none;
+    }
     .emailIDSubmit {
         border: 0;
     border-radius: 100px;
@@ -969,6 +972,12 @@ cursor: pointer;
 
 
     #emailInput , input{ width: 330px;
+       
+    }
+
+    input {
+        height: 50px;
+        
     }
 
     div#emailSubscribe {

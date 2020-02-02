@@ -769,6 +769,10 @@ div#emailSubscribe input {
   position: relative;
 }
 
+div#emailSubscribe input, div#emailSubscribe button {
+  -webkit-appearance: none;
+}
+
 div#emailSubscribe .emailIDSubmit {
   border: 0;
   border-radius: 100px;
@@ -933,6 +937,9 @@ div#emailSubscribe .emailIDSubmit .far {
   }
   #emailInput, input {
     width: 330px;
+  }
+  input {
+    height: 50px;
   }
   div#emailSubscribe .emailIDSubmit {
     left: 255px;
