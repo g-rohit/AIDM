@@ -755,9 +755,12 @@ transition: all 0.5s;
 
 // =============== Email Subscribe section ========================= //
 
+#emailInput , input{ width: 400px;
+}
+
 #emailInput {
     position: relative;
-    width: 400px;
+ 
     display: block;
     margin: 0 auto;
 }
@@ -767,7 +770,6 @@ div#emailSubscribe {
     input {
  
         padding: 0;
-        min-width: 400px;
         height: 50px;
         border: 1px solid $primary-color;
         border-radius: 50px;
@@ -811,19 +813,19 @@ cursor: pointer;
   ::-moz-placeholder { /* Firefox 19+ */
         color: $primary-color;
         opacity: 0.35;
-        font-size: 1em;
+        font-size: 0.8em;
 
   }
   :-ms-input-placeholder { /* IE 10+ */
         color: $primary-color;
         opacity: 0.35;
-        font-size: 1em;
+        font-size: 0.8em;
 
   }
   :-moz-placeholder { /* Firefox 18- */
         color: $primary-color;
         opacity: 0.35;
-        font-size: 0.5em;
+        font-size: 0.8em;
 
   }
 
@@ -963,4 +965,43 @@ cursor: pointer;
     .footer {
         min-height: 120px;
     }
+
+
+
+    #emailInput , input{ width: 330px;
+    }
+
+    div#emailSubscribe {
+       
+        .emailIDSubmit {
+           
+        left: 255px;
+    cursor: pointer;
+    
+    
+        }
+    }
+
+    
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $primary-color;
+    opacity: 0.35;
+    font-size: 0.7em;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+        color: $primary-color;
+        opacity: 0.35;
+        font-size: 0.7em;
+
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+        color: $primary-color;
+        opacity: 0.35;
+        font-size: 0.7em;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+        color: $primary-color;
+        opacity: 0.35;
+        font-size: 0.7em;
+}
 }
