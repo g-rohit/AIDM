@@ -104,13 +104,19 @@ document.querySelector("#currentYear").innerHTML = year;
 
 let userInputEmail = document.querySelector(".emailIDSubmit");
 let errorMsg  = {
-  'emptyInputEmail': 'Kindly enter a valid email Address ' ,
-  'invalidEmailInput': 'Kindly check the email Address entered ' 
+  'emptyInputEmail': 'Kindly enter a valid email ID' ,
+  'invalidEmailInput': 'Please check the entered email ID' ,
+  'validEmailInput': 'Thanks for providing your email ID. <br> We will soon add it to our list.'
 }
 userInputEmail.addEventListener("click", () => {
   let emailField = document.querySelector("#userEmailAddress").value;
 let emailBoxErrMsg  = document.querySelector('#emailBoxErrMsg');
-let validEmailRegex = RegExp('/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/');
+let validEmailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+
+let emailInputIsValid = validEmailRegex.test(emailField);
+// console.log(validEmailRegex.test(emailField));
+
   if (emailField == "") {
     // alert("please enter the email ID");
     console.log("email input empty");
@@ -119,14 +125,26 @@ let validEmailRegex = RegExp('/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]
     emailBoxErrMsg.classList = 'm-10 display-inline-block'
   }
 
-  else if (validEmailRegex.test(emailField)) {
+
+  else if(emailInputIsValid == false) {
     console.log("email not correct");
+console.log(validEmailRegex.test(emailField));
 
     emailBoxErrMsg.innerHTML = errorMsg.invalidEmailInput;
-    emailBoxErrMsg.classList = 'm-10 display-inline-none'
+    emailBoxErrMsg.classList = 'm-10 display-inline-block'
   } 
-  else {
-    emailBoxErrMsg.innerHTML = '';
-    emailBoxErrMsg.classList = 'm-10 display-none'
+
+  else if (emailInputIsValid == true) {
+    console.log('correct email ID');
+ 
+    console.log(validEmailRegex.test(emailField));
+    
+        emailBoxErrMsg.innerHTML = errorMsg.validEmailInput;
+        emailBoxErrMsg.classList = 'm-10 display-inline-block emailBoxSuccessMsg'
   }
+  
 });
+
+
+
+// 
