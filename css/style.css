@@ -743,7 +743,9 @@ mb-10 {
 }
 
 #emailInput, input {
-  width: 400px;
+  max-width: 600px;
+  min-width: 310px;
+  width: 100%;
 }
 
 #emailInput {
@@ -761,6 +763,7 @@ div#emailSubscribe input {
   padding: 0;
   height: 50px;
   border: 1px solid #7f00ff;
+  color: #7f00ff;
   border-radius: 50px;
   outline: none;
   padding-left: 20px;
@@ -768,6 +771,8 @@ div#emailSubscribe input {
   margin: 0 auto 20px;
   display: block;
   position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
 }
 
 div#emailSubscribe input, div#emailSubscribe button {
@@ -780,13 +785,12 @@ div#emailSubscribe .emailIDSubmit {
   width: 50px;
   height: 40px;
   background-color: #7f00ff;
-  color: #ffffff;
+  color: #FAF8ED;
   outline: none;
   position: absolute;
   top: 44px;
-  right: 0;
-  width: 70px;
-  left: 325px;
+  right: 6px;
+  width: 115px;
   cursor: pointer;
 }
 
@@ -955,14 +959,12 @@ div#emailSubscribe .emailIDSubmit .far {
     min-height: 120px;
   }
   #emailInput, input {
-    width: 330px;
+    min-width: 300px;
+    width: 100%;
+    max-width: 600px;
   }
   input {
     height: 50px;
-  }
-  div#emailSubscribe .emailIDSubmit {
-    left: 255px;
-    cursor: pointer;
   }
   ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */

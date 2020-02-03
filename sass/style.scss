@@ -472,9 +472,7 @@ header {
 
 }
 
-#homeIntro {
-    // background: $color-white;
-}
+ 
 //******************************  Blog SECTION ******************************//
 #blog-container {
     background-color: #f0f0f0;
@@ -756,7 +754,8 @@ transition: all 0.5s;
 
 // =============== Email Subscribe section ========================= //
 
-#emailInput , input{ width: 400px;
+#emailInput , input{ max-width: 600px;
+    min-width: 310px; width: 100%;
 }
 
 #emailInput {
@@ -774,6 +773,7 @@ div#emailSubscribe {
         padding: 0;
         height: 50px;
         border: 1px solid $primary-color;
+        color: $primary-color;
         border-radius: 50px;
         outline: none;
         padding-left: 20px;
@@ -781,6 +781,8 @@ div#emailSubscribe {
         margin: 0 auto 20px;
         display: block;
         position: relative;
+        font-family: $font-body;
+        font-weight: 600;
     }
 
     input, button {
@@ -792,13 +794,13 @@ div#emailSubscribe {
     width: 50px;
     height: 40px;
     background-color: #7f00ff;
-    color: #ffffff;
+    color: $color-desert-white;
     outline: none;
     position: absolute;
     top: 44px;
-    right: 0;
-    width: 70px;
-    left: 325px;
+    right: 6px;
+    width: 115px;
+ 
 cursor: pointer;
 
 &:hover {
@@ -985,7 +987,10 @@ cursor: pointer;
 
 
 
-    #emailInput , input{ width: 330px;
+    #emailInput , input{ 
+        min-width: 300px;
+        width: 100%;
+        max-width: 600px;
        
     }
 
@@ -994,16 +999,14 @@ cursor: pointer;
         
     }
 
-    div#emailSubscribe {
+    // div#emailSubscribe {
        
-        .emailIDSubmit {
+    //     .emailIDSubmit {
            
-        left: 255px;
-    cursor: pointer;
+     
     
-    
-        }
-    }
+    //     }
+    // }
 
     
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
