@@ -102,13 +102,14 @@ document.querySelector("#currentYear").innerHTML = year;
 
 // handling email subs input
 
-let userInputEmail = document.querySelector(".emailIDSubmit");
+let userInputEmail = document.querySelector(".emailIDSubmitBtn");
 let errorMsg  = {
   'emptyInputEmail': 'Kindly enter a valid email ID' ,
   'invalidEmailInput': 'Please check the entered email ID' ,
   'validEmailInput': 'Thanks for providing your email ID. <br> We will soon add it to our list.'
 }
 userInputEmail.addEventListener("click", () => {
+  event.preventDefault();
   let emailField = document.querySelector("#userEmailAddress").value;
 let emailBoxErrMsg  = document.querySelector('#emailBoxErrMsg');
 let validEmailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -122,7 +123,7 @@ let emailInputIsValid = validEmailRegex.test(emailField);
     console.log("email input empty");
     
     emailBoxErrMsg.innerHTML = errorMsg.emptyInputEmail;
-    emailBoxErrMsg.classList = 'm-10 display-inline-block'
+    emailBoxErrMsg.classList = 'm-10 display-block'
   }
 
 
@@ -131,7 +132,7 @@ let emailInputIsValid = validEmailRegex.test(emailField);
 console.log(validEmailRegex.test(emailField));
 
     emailBoxErrMsg.innerHTML = errorMsg.invalidEmailInput;
-    emailBoxErrMsg.classList = 'm-10 display-inline-block'
+    emailBoxErrMsg.classList = 'm-10 display-block'
   } 
 
   else if (emailInputIsValid == true) {
@@ -140,11 +141,65 @@ console.log(validEmailRegex.test(emailField));
     console.log(validEmailRegex.test(emailField));
     
         emailBoxErrMsg.innerHTML = errorMsg.validEmailInput;
-        emailBoxErrMsg.classList = 'm-10 display-inline-block emailBoxSuccessMsg'
+        emailBoxErrMsg.classList = 'm-10 display-block emailBoxSuccessMsg'
   }
   
 });
 
 
 
-// 
+// mobile menu
+
+
+let mobileMenu = document.querySelector('.mobileMenu');
+
+mobileMenu.addEventListener ('click', () => {
+  
+  console.log(mobileMenu.firstElementChild.classList.value);
+  console.log(mobileMenu.firstElementChild.classList);
+
+  // mobileMenu.firstElementChild.classList = 'fa-2x fa-times fad text-light'
+
+let allClassesOfMenuItem = mobileMenu.firstElementChild.classList.value;
+
+
+if (allClassesOfMenuItem == 'fa-2x fa-bars fad') {
+  // menu is open
+  console.log('menu is open');
+  mobileMenu.firstElementChild.classList = 'fa-2x fa-times fad text-light';
+  document.querySelector('#homePageHeader').classList = " flex";
+} else {
+  // menu is closed
+  console.log('menu is closed');
+  
+  mobileMenu.firstElementChild.classList = 'fa-2x fa-bars fad';
+  document.querySelector('#homePageHeader').classList = "homePageHeader display-none";
+  
+}
+  // mobileMenu.firstElementChild.classList.value = 'fa-times';
+
+})
+
+
+
+//  scroll to top function:
+
+
+let scrollTopDiv = document.querySelector("#goToTop");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollToTop()};
+
+function scrollToTop() {
+  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+    scrollTopDiv.style.display = "block";
+  } else {
+    scrollTopDiv.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}

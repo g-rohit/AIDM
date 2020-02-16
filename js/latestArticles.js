@@ -1,4 +1,13 @@
-let latestArticles = [{
+let latestArticles = [
+  {
+    "thumbnail": "https://i.postimg.cc/bJm3LZ63/nideep-varghese-79339959-195514474959342-25545039768488056-n.jpg",
+    "blogTitle": "Why do I hate what I hate",
+    "blogPreviewText": "I hate BJP, probably more than the average person. However, very few people can actually get off of their moral high horse and actually explain why do they hate BJP? Again, the answer should be obvious that they’re destroying the economy,",
+    "fullBlogLink": "https://blog.allindiadankmemes.in/why-i-hate-what-i-hate/",
+    "publishedDate": "2020-02-15T00:00:00.000Z"
+
+  }, 
+  {
     "thumbnail": "https://i.postimg.cc/y62Mcs9s/Andrew-Neil-destroys-Ben-Shapiro-in-BBC-interview-0-1-screensh.png",
     "blogTitle": "Ben Shapiro Gets DESTROYED",
     "blogPreviewText": "There’s a clip going viral on the internet involving Ben Shapiro in a heated argument with a ‘Leftist’. That word is stressed in single quotes because Ben Shapiro referred to Andrew Neil, the former chairman of the Federation of Conservative Students, a Leftist. Oh Boy!",
@@ -35,7 +44,7 @@ let latestBlogsPreviewCards = document.querySelector('.latestBlogsPreviewCards')
 
 function eachBlogCard() {
 
-  for (let i = 0; i < latestArticles.length; i++) {
+  for (let i = 0; i < 3; i++) {
 
     // console.log("latestArticles");
     // console.log(latestArticles);

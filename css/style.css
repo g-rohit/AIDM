@@ -5,6 +5,16 @@
           box-sizing: border-box;
 }
 
+::-moz-selection {
+  background-color: #1C1D24;
+  color: #FAF8ED;
+}
+
+::selection {
+  background-color: #1C1D24;
+  color: #FAF8ED;
+}
+
 html,
 body {
   text-rendering: optimizeLegibility;
@@ -90,6 +100,18 @@ a:hover {
 ul {
   padding: 0;
   list-style: none;
+}
+
+.email__ID {
+  padding: 5px;
+  border-bottom: 1px solid;
+  text-decoration: none;
+}
+
+.email__ID:hover {
+  background-color: #d3dde6;
+  text-decoration: none;
+  border-bottom: 1px solid #d3dde6;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -245,7 +267,16 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+.bg-purple {
+  background: -webkit-gradient(linear, left top, right top, from(#8e2de2), to(#4a00e0));
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  -webkit-box-shadow: 2px 6px 50px 5px #5f00ffa8;
+          box-shadow: 2px 6px 50px 5px #5f00ffa8;
+}
+
 header {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   background: -webkit-gradient(linear, left top, right top, from(#8e2de2), to(#4a00e0));
   background: linear-gradient(to right, #8e2de2, #4a00e0);
   -webkit-box-shadow: 2px 6px 50px 5px #5f00ffa8;
@@ -730,6 +761,12 @@ mb-10 {
   margin-bottom: 10px;
 }
 
+.display-block {
+  display: block;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
 .display-inline-block {
   display: inline-block;
   -webkit-transition: all 0.5s;
@@ -742,7 +779,8 @@ mb-10 {
   transition: all 0.5s;
 }
 
-#emailInput, input {
+#emailInput,
+input {
   max-width: 600px;
   min-width: 310px;
   width: 100%;
@@ -760,13 +798,12 @@ div#emailSubscribe {
 }
 
 div#emailSubscribe input {
-  padding: 0;
+  padding: 20px;
   height: 50px;
   border: 1px solid #7f00ff;
   color: #7f00ff;
   border-radius: 50px;
   outline: none;
-  padding-left: 20px;
   font-size: 1.5em;
   margin: 0 auto 20px;
   display: block;
@@ -775,11 +812,13 @@ div#emailSubscribe input {
   font-weight: 600;
 }
 
-div#emailSubscribe input, div#emailSubscribe button {
+div#emailSubscribe input,
+div#emailSubscribe button {
   -webkit-appearance: none;
 }
 
-div#emailSubscribe .emailIDSubmit {
+div#emailSubscribe .emailIDSubmitBtn {
+  cursor: pointer;
   border: 0;
   border-radius: 100px;
   width: 50px;
@@ -791,14 +830,15 @@ div#emailSubscribe .emailIDSubmit {
   top: 44px;
   right: 6px;
   width: 115px;
+  font-size: 1.25em;
   cursor: pointer;
 }
 
-div#emailSubscribe .emailIDSubmit:hover {
+div#emailSubscribe .emailIDSubmitBtn:hover {
   background-color: #1b1aff;
 }
 
-div#emailSubscribe .emailIDSubmit .far {
+div#emailSubscribe .emailIDSubmitBtn .far {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
@@ -807,28 +847,24 @@ div#emailSubscribe .emailIDSubmit .far {
   /* Chrome/Opera/Safari */
   color: #7f00ff;
   opacity: 0.35;
-  font-size: 0.8em;
 }
 
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: #7f00ff;
   opacity: 0.35;
-  font-size: 0.8em;
 }
 
 :-ms-input-placeholder {
   /* IE 10+ */
   color: #7f00ff;
   opacity: 0.35;
-  font-size: 0.8em;
 }
 
 :-moz-placeholder {
   /* Firefox 18- */
   color: #7f00ff;
   opacity: 0.35;
-  font-size: 0.8em;
 }
 
 #emailBoxErrMsg {
@@ -837,6 +873,7 @@ div#emailSubscribe .emailIDSubmit .far {
   padding: 10px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  opacity: 0.8;
 }
 
 .emailBoxSuccessMsg {
@@ -857,6 +894,38 @@ div#emailSubscribe .emailIDSubmit .far {
   padding: 20px 55px;
 }
 
+.mobileMenu {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+  display: none;
+}
+
+.mobileMenu .fa-bars {
+  color: #7f00ff;
+}
+
+#workWithUs p {
+  font-size: 1.5em;
+  line-height: 1.6;
+}
+
+#goToTop {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 0 15px 55px 0;
+  z-index: 999;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
 @media all and (max-width: 786px) {
   .p-sm-0 {
     padding: 0 !important;
@@ -871,7 +940,8 @@ div#emailSubscribe .emailIDSubmit .far {
             flex-direction: column;
   }
   .main-title-head {
-    font-size: 2.75em;
+    font-size: 3em;
+    padding-top: 1em;
   }
   .main-title {
     text-align: center;
@@ -902,15 +972,11 @@ div#emailSubscribe .emailIDSubmit .far {
   .lead {
     font-size: 1.5em;
   }
-  #aboutUs,
-  #blog,
-  #contactUs {
-    margin-bottom: 100px;
-  }
   #aboutUs p,
   #blog p,
-  #contactUs p {
-    font-size: 1em;
+  #contactUs p,
+  #workWithUs p {
+    font-size: 1.25em;
   }
   header nav {
     margin: 25px auto;
@@ -958,13 +1024,17 @@ div#emailSubscribe .emailIDSubmit .far {
   .footer {
     min-height: 120px;
   }
-  #emailInput, input {
+  #emailInput,
+  input {
     min-width: 300px;
     width: 100%;
     max-width: 600px;
   }
   input {
     height: 50px;
+  }
+  .emailIDSubmitBtn {
+    position: static !important;
   }
   ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
@@ -992,6 +1062,7 @@ div#emailSubscribe .emailIDSubmit .far {
   }
   .contactUsCard {
     padding: 20px 10px;
+    margin-bottom: 45px;
   }
 }
 
@@ -1035,6 +1106,12 @@ div#emailSubscribe .emailIDSubmit .far {
   }
   .card .blog-content-preview {
     min-height: auto;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .mobileMenu {
+    display: inline-block;
   }
 }
 
